@@ -69,6 +69,7 @@ class EtoSpecialFolder:
     ApplicationSettings = 0
     ApplicationResources = 1
     Documents = 2
+    EntryExecutable = 3
 
 
 class ExportHandlerAttribute(PlatformExtensionAttribute):
@@ -182,6 +183,8 @@ class OperatingSystemPlatform:
     def IsMac(self) -> bool: ...
     @property
     def IsMono(self) -> bool: ...
+    @property
+    def IsNetCore(self) -> bool: ...
     @property
     def IsUnix(self) -> bool: ...
     @property

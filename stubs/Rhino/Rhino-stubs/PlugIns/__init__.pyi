@@ -476,6 +476,7 @@ class RenderFeature:
     RenderViewSource = 19
     CustomSkylightEnvironment = 20
     CustomReflectionEnvironment = 21
+    RenderChannels = 22
 
 
 class RenderPlugIn(PlugIn):

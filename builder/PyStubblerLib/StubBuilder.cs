@@ -151,9 +151,12 @@ namespace PyStubblerLib
             if( allChildNamespaces.Length>0 )
             {
                 // import child namespaces
+                sb.Append("from . import ");
                 for (int i = 0; i < allChildNamespaces.Length; i++)
                 {
-                    sb.AppendLine($"from . import {allChildNamespaces[i]}");
+                    if (i > 0)
+                        sb.Append(",");
+                    sb.Append($"{allChildNamespaces[i]}");
                 }
                 sb.AppendLine("");
 

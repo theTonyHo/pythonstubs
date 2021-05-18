@@ -150,6 +150,13 @@ namespace PyStubblerLib
             string[] allChildNamespaces = GetChildNamespaces(stubTypes[0].Namespace, allNamespaces);
             if( allChildNamespaces.Length>0 )
             {
+                // import child namespaces
+                for (int i = 0; i < allChildNamespaces.Length; i++)
+                {
+                    sb.AppendLine($"from . import {allChildNamespaces[i]}");
+                }
+                sb.AppendLine("");
+
                 sb.Append("__all__ = [");
                 for(int i=0; i<allChildNamespaces.Length; i++)
                 {
